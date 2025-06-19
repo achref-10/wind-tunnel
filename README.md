@@ -133,5 +133,5 @@ Open-source project licensed under MIT License.
 For inquiries or collaboration:
 
 - Achref Abdellaoui – Embedded Systems Developer  
-- 📧 [your.email@example.com](mailto:your.email@example.com)
+- 📧 [achrefabdelloui809@gmail.com](mailto:your.email@example.com)
 - GitHub: [github.com/achrefabdellaoui](https://github.com/achrefabdellaoui)
