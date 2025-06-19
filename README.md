@@ -134,4 +134,4 @@ For inquiries or collaboration:
 
 - Achref Abdellaoui – Embedded Systems Developer  
 - 📧 [achrefabdelloui809@gmail.com](mailto:your.email@example.com)
-- GitHub: [github.com/achrefabdellaoui](https://github.com/achrefabdellaoui)
+- GitHub: [[github.com/achrefabdellaoui](https://github.com/achref-10)](https://github.com/achrefabdellaoui)
