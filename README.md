@@ -1,3 +1,5 @@
+# Combine the newly provided README content with previous details to form a complete README file
+readme_combined = """
 # 🌬️ Wind Tunnel Simulation for EV Aerodynamic Study
 
 This project is part of our electric vehicle (EV) research. It simulates real aerodynamic conditions using a custom wind tunnel. The embedded system controls wind flow using a timed relay and measures the effect of wind on a scaled EV model using weight sensors.
@@ -45,12 +47,33 @@ Responsible for:
 
 ---
 
-## 🔁 Working Principle
+## 📐 Physics Overview
 
-1. The operator sets the desired delay and run time on the relay module.
-2. The module activates the fan after the delay and runs it for the configured time.
-3. During fan activation, the Arduino reads force values from the sensors.
-4. Data is displayed in real time on the LCD screen.
+The aerodynamic coefficients are calculated as follows:
+
+Cl = (2 * Lift) / (ρ * V² * A)
+Cd = (2 * Drag) / (ρ * V² * A)
+
+Where:
+- **Lift**, **Drag** = Measured in Newtons from load cells
+- **ρ** = Air density (typically 1.225 kg/m³)
+- **V** = Airspeed (m/s)
+- **A** = Frontal area of model (m²)
+
+---
+
+## 🧪 How to Use
+
+1. 📥 **Upload the code** to Arduino using the Arduino IDE.
+2. 🖥️ Open the **Serial Monitor** at 9600 baud.
+3. 🔌 Connect the fan and sensors, place the vehicle model in tunnel.
+4. Send the following serial commands:
+
+| Command | Action                            |
+|---------|-----------------------------------|
+| `s`     | Start fan speed test (measures RPM and air speed) |
+| `d`     | Start aerodynamic test (measures lift/drag and calculates Cl/Cd) |
+| `a`     | Export Cl and Cd repeatedly for MATLAB/Python logging |
 
 ---
 
@@ -64,37 +87,10 @@ Responsible for:
 | 16x2 LCD with I2C Adapter               | 1   | Display for sensor readings          |
 | Multifunction Trigger Delay Relay Timer | 1   | For fan activation timing            |
 | 12V DC Fan / Motor                      | 1   | Generates airflow                    |
+| IR Sensor                               | 1   | Measures fan RPM                     |
 | Power Supply (12V DC)                   | 1   | Powers fan and relay                 |
 | Breadboard or Custom PCB                | 1   | Wiring and component placement       |
 | Jumper Wires, Screws, Frame             | —   | For connections and support          |
-
----
-
-## 🛠️ Setup Instructions
-
-### Hardware
-
-- Connect fan power line through the relay switch
-- Use Arduino to read both HX711 modules
-- Mount load cells under a base holding the EV model
-- Power the relay module using 12V
-- Adjust relay timing using onboard buttons or serial commands (if supported)
-
-### Software
-
-1. Upload the Arduino sketch `main.ino`
-2. Calibrate the HX711 load cells
-3. Use the serial monitor to debug or test output
-
----
-
-## 🧪 Test Procedure
-
-1. Place the scaled EV model on the platform above load cells
-2. Set relay delay (e.g., 3 seconds) and run time (e.g., 10 seconds)
-3. Activate the system
-4. Observe real-time force readings on the LCD
-5. Compare wind-off and wind-on values for analysis
 
 ---
 
@@ -115,16 +111,27 @@ Responsible for:
 
 ---
 
-## 🤝 Credits
+## 📊 Sample Output (Serial Monitor)
 
-- **Hardware & Physical Wind Tunnel Setup:** [salim ammar]
-- **Embedded System & Coding:** [Achref Abdellaoui](https://github.com/achrefabdellaoui)
+Fan: 25.3 km/h
+Air: 5.1 km/h
+LIFT: 0.342 N
+DRAG: 0.118 N
+CL: 1.09
+CD: 0.38
 
 ---
 
-## 📄 License
+## 📃 License
 
 Open-source project licensed under MIT License.
+
+---
+
+## 🤝 Credits
+
+- **Hardware & Physical Wind Tunnel Setup:** salim ammar
+- **Embedded System & Coding:** [Achref Abdellaoui](https://github.com/achrefabdellaoui)
 
 ---
 
@@ -133,5 +140,42 @@ Open-source project licensed under MIT License.
 For inquiries or collaboration:
 
 - Achref Abdellaoui – Embedded Systems Developer  
-- 📧 [achrefabdelloui809@gmail.com](mailto:your.email@example.com)
-- GitHub: [[github.com/achrefabdellaoui](https://github.com/achref-10)]
+- 📧 achrefabdelloui809@gmail.com  
+- GitHub: [github.com/achrefabdellaoui](https://github.com/achrefabdellaoui)
+"""
+
+readme_path = "/mnt/data/WindTunnel_README.md"
+with open(readme_path, "w") as f:
+    f.write(readme_combined)
+
+readme_path
+
+---
+
+## 📃 License
+
+Open-source project licensed under MIT License.
+
+---
+
+## 🤝 Credits
+
+- **Hardware & Physical Wind Tunnel Setup:** salim ammar
+- **Embedded System & Coding:** [Achref Abdellaoui](https://github.com/achrefabdellaoui)
+
+---
+
+## 📬 Contact
+
+For inquiries or collaboration:
+
+- Achref Abdellaoui – Embedded Systems Developer  
+- 📧 achrefabdelloui809@gmail.com  
+- GitHub: [github.com/achrefabdellaoui](https://github.com/achrefabdellaoui)
+"""
+
+readme_path = "/mnt/data/WindTunnel_README.md"
+with open(readme_path, "w") as f:
+    f.write(readme_combined)
+
+readme_path
